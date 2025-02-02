@@ -98,6 +98,6 @@ public class Texture {
     }
 
     public BufferedImage getEnemieSprite(int xx, int yy) {
-        return spritesheet.getSubimage(xx, yy, 12, 12);
+        return spritesheet.getSubimage(xx, yy, 12, 9);
     }
 }
