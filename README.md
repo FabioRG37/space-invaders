@@ -2,13 +2,12 @@
 
 ## Nota
 
-Este é apenas um projeto do jogo no estílo **space-invaders**, com o objetivo didático.
-Trata-se de mais um projeto no qual estou praticando para aprender a programar jogos.
-Esta versão se baseia em um tutorial que do youtube, caso queira conferir, estou disponibilizando o link:
+Este é apenas um projeto de jogo no estílo **space-invaders**, com o objetivo didático.<br>
+Esta versão baseia-se em um tutorial do youtube, caso queira conferir, estou disponibilizando o link:<br>
 https://www.youtube.com/watch?v=UILUMvjLEVU&t=2863s
 
-Apesar de estar baseado em um vídeo, a estrutura do projeto foi implementada de forma diferente, com criando de outras pastas e usao do conhecimento adquirido em outros tutoriais.
-Desta forma, o projeto não está exatamente como pode se ver no vídeo que serviu de base.
+Apesar de se basear em um vídeo, a estrutura do projeto foi implementada de forma diferente, com criação de outras pastas, divisão de classes e uso de conhecimento adquiridos em outros tutoriais.
+Desta forma, o projeto não está exatamente como se pode ver no vídeo.
 
 ## Sobre o Jogo
 Space Invaders é um jogo de tiro espacial clássico onde você deve defender a Terra de uma invasão alienígena.
