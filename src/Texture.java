@@ -23,7 +23,7 @@ public class Texture {
         } catch (IOException e) {
             System.out.println("Erro ao carregar imagem: " + e.getMessage());
         }
-        player = new ImageIcon(getPlayerSprite(36, 0)).getImage();
+        player = new ImageIcon(getPlayerSprite(51, 0)).getImage();
 
 //        player[0] = getPlayerSprite(0, 0);
 //        player[1] = getPlayerSprite(12, 0);
@@ -33,10 +33,10 @@ public class Texture {
 
         // first emeny
         blueEnemy = new ImageIcon(getEnemieSprite(0, 8)).getImage();
-        yellowEnemy = new ImageIcon(getEnemieSprite(12, 8)).getImage();
-        redEnemy = new ImageIcon(getEnemieSprite(24, 8)).getImage();
-        greenEnemy = new ImageIcon(getEnemieSprite(36, 8)).getImage();
-        whiteEnemy = new ImageIcon(getEnemieSprite(48, 8)).getImage();
+        yellowEnemy = new ImageIcon(getEnemieSprite(17, 8)).getImage();
+        redEnemy = new ImageIcon(getEnemieSprite(34, 8)).getImage();
+        greenEnemy = new ImageIcon(getEnemieSprite(51, 8)).getImage();
+        whiteEnemy = new ImageIcon(getEnemieSprite(68, 8)).getImage();
         enemies.add(blueEnemy);
         enemies.add(yellowEnemy);
         enemies.add(redEnemy);
@@ -94,10 +94,10 @@ public class Texture {
     }
 
     public BufferedImage getPlayerSprite(int xx, int yy) {
-        return spritesheet.getSubimage(xx, yy, 11, 7);
+        return spritesheet.getSubimage(xx, yy, 16, 9);
     }
 
     public BufferedImage getEnemieSprite(int xx, int yy) {
-        return spritesheet.getSubimage(xx, yy, 12, 9);
+        return spritesheet.getSubimage(xx, yy, 17, 10);
     }
 }
