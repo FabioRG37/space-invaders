@@ -13,7 +13,10 @@ Desta forma, o projeto não está exatamente como se pode ver no vídeo.
 Space Invaders é um jogo de tiro espacial clássico onde você deve defender a Terra de uma invasão alienígena.
 
 ## Imagens
-<img src="https://github.com/FabioRG37/space-invaders/blob/master/res/Images/Example_Space_Invaders.PNG" width="317" height="366" alt="Print do game emprodução">
+<img src="https://github.com/FabioRG37/space-invaders/blob/master/res/Images/Example_Space_Invaders.PNG" width="221" height="256" alt="Print do game emprodução">
+<img src="https://github.com/FabioRG37/space-invaders/blob/master/res/Images/Example_Space_Invaders_1.PNG" width="221" height="256" alt="Print do game emprodução">
+<img src="https://github.com/FabioRG37/space-invaders/blob/master/res/Images/Example_Space_Invaders_2.PNG" width="221" height="256" alt="Print do game emprodução">
+<img src="https://github.com/FabioRG37/space-invaders/blob/master/res/Images/Example_Space_Invaders_3.PNG" width="221" height="256" alt="Print do game emprodução">
 <!-- ![Print do game em produção](https://github.com/FabioRG37/space-invaders/blob/master/res/Images/Example_Space_Invaders.PNG) -->
 
 ## Recursos
@@ -33,7 +36,7 @@ Space Invaders é um jogo de tiro espacial clássico onde você deve defender a 
    git clone https://github.com/FabioRG37/space-invaders.git
    ```
 3. Abra o projeto no seu IDE preferido.
-4. Execute o jogo usando o comando java -jar SpaceInvaders.jar.
+4. Abra o arquivo Main e execute o **Run** do projeto.
 
 ## Como Contribuir
 
