@@ -1,4 +1,5 @@
-# Space Invaders: A Jornada Espacial
+<h1 align='center'>Space Invaders</h1>
+
 
 ## Nota
 
@@ -13,7 +14,7 @@ Desta forma, o projeto não está exatamente como se pode ver no vídeo.
 Space Invaders é um jogo de tiro espacial clássico onde você deve defender a Terra de uma invasão alienígena.
 
 ## Imagens
-<p>
+<p align='center'>
 <img src="https://github.com/FabioRG37/space-invaders/blob/master/res/Images/Example_Space_Invaders.PNG" width="221" height="256" alt="Print do game emprodução">
 <img src="https://github.com/FabioRG37/space-invaders/blob/master/res/Images/Example_Space_Invaders_2.PNG" width="221" height="256" alt="Print do game emprodução">
 <img src="https://github.com/FabioRG37/space-invaders/blob/master/res/Images/Example_Space_Invaders_3.png" width="221" height="256" alt="Print do game emprodução">
