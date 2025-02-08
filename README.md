@@ -33,14 +33,38 @@ Space Invaders é um jogo de tiro espacial clássico onde você deve defender a 
 - Biblioteca de gráficos: JavaFX
 - Motor de som: Java Sound API
 
+## Estrutura do Projeto
+
+```
+space-invaders/
+├── res/
+│   ├── images/
+│   ├── sounds/
+│   ├── sprites/
+├── src/
+```
+
 ## Instalação e Execução
 1. Crie uma pasta do seu computador e clone o repositório.
    ```bash
    git clone https://github.com/FabioRG37/space-invaders.git
    ```
-3. Abra o projeto no seu IDE preferido.
-4. Abra o arquivo Main e execute o **Run** do projeto.
 
+2. Navegue até o diretório do projeto:
+   ```bash
+   cd space-invaders
+   ```
+   
+3. Compile o código-fonte:
+   ```bash
+   javac -d bin src/*.java
+   ```
+   
+4. Execute o projeto:
+   ```bash
+   java -cp bin main.Main
+   ```
+   
 ## Como Contribuir
 
 Contribuições são bem-vindas! Siga os passos abaixo para contribuir:
