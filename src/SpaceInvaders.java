@@ -10,6 +10,7 @@ import java.util.Random;
 public class SpaceInvaders extends JPanel implements ActionListener, KeyListener {
     public Texture texture = new Texture();
     public Block ship;
+    private Sound sounds = new Sound();
 
     public Image shipImg;
     public ArrayList<Image> alienImgArray;
@@ -109,7 +110,10 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
                     }
                 }
 
-                if (alien.y + alien.height > ship.y) Constants.GAME_OVER = true;
+                if (alien.y + alien.height > ship.y) {
+                    Constants.GAME_OVER = true;
+                    sounds.hurt();
+                }
             }
         }
 
@@ -122,6 +126,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
             for (int j = 0; j < alienArray.size(); j++) {
                 Block alien = alienArray.get(j);
                 if (!bullet.used && alien.alive && detectCollision(bullet, alien)) {
+                    sounds.explosion();
                     bullet.used = true;
                     alien.alive = false;
                     alienCount--;
@@ -211,6 +216,7 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
         if (e.getKeyCode() == KeyEvent.VK_SPACE) {
             Block bullet = new Block(ship.x + shipWidth * 16 / 32, ship.y, bulletWidth, bulletHeight, null);
             bulletArray.add(bullet);
+            sounds.shoot();
         }
     }
 }

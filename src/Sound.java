@@ -30,29 +30,29 @@ public class Sound {
         return clip;
     }
 
-    static void shoot() {
-        Clip som = Sound.sound(Sound.class.getResource("res/sounds/shoot.wav").getFile());
+    public void shoot() {
+        Clip som = Sound.sound(Sound.class.getResource("sounds/shoot.wav").getFile());
         if (som != null){
             som.start();
         }
     }
 
-    static void hit() {
-        Clip som = Sound.sound(Sound.class.getResource("res/sounds/hit.wav").getFile());
+    public void hit() {
+        Clip som = Sound.sound(Sound.class.getResource("sounds/hit.wav").getFile());
         if (som != null){
             som.start();
         }
     }
 
-    static void explosion() {
-        Clip som = Sound.sound(Sound.class.getResource("res/sounds/explosion.wav").getFile());
+    public void explosion() {
+        Clip som = Sound.sound(Sound.class.getResource("sounds/explosion.wav").getFile());
         if (som != null){
             som.start();
         }
     }
 
-    static void hurt() {
-        Clip som = Sound.sound(Sound.class.getResource("res/sounds/hurt.wav").getFile());
+    public void hurt() {
+        Clip som = Sound.sound(Sound.class.getResource("sounds/hurt.wav").getFile());
         if (som != null){
             som.start();
         }
