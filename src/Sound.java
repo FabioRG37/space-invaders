@@ -3,6 +3,28 @@ import java.io.File;
 import java.io.IOException;
 
 public class Sound {
+    private static Clip shootClip;
+    private static Clip hitClip;
+    private static Clip explosionClip;
+    private static Clip hurtClip;
+
+    static {
+        shootClip = sound(Sound.class.getResource("sounds/shoot.wav").getFile());
+        hitClip = sound(Sound.class.getResource("sounds/hit.wav").getFile());
+        explosionClip = sound(Sound.class.getResource("sounds/explosion.wav").getFile());
+        hurtClip = sound(Sound.class.getResource("sounds/hurt.wav").getFile());
+
+        setVolume(shootClip, -10.0f);
+        setVolume(hitClip, -10.0f);
+        setVolume(explosionClip, -10.0f);
+        setVolume(hurtClip, -10.0f);
+    }
+
+    private static void setVolume(Clip clip, float volume) {
+        FloatControl gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+        gainControl.setValue(volume);
+    }
+
     private static Clip sound(String path) {
         Clip clip = null;
         AudioInputStream ais = null;
@@ -31,30 +53,30 @@ public class Sound {
     }
 
     public void shoot() {
-        Clip som = Sound.sound(Sound.class.getResource("sounds/shoot.wav").getFile());
-        if (som != null){
-            som.start();
+        if (shootClip != null) {
+            shootClip.setFramePosition(0);
+            shootClip.start();
         }
     }
 
     public void hit() {
-        Clip som = Sound.sound(Sound.class.getResource("sounds/hit.wav").getFile());
-        if (som != null){
-            som.start();
+        if (hitClip != null) {
+            hitClip.setFramePosition(0);
+            hitClip.start();
         }
     }
 
     public void explosion() {
-        Clip som = Sound.sound(Sound.class.getResource("sounds/explosion.wav").getFile());
-        if (som != null){
-            som.start();
+        if (explosionClip != null) {
+            explosionClip.setFramePosition(0);
+            explosionClip.start();
         }
     }
 
     public void hurt() {
-        Clip som = Sound.sound(Sound.class.getResource("sounds/hurt.wav").getFile());
-        if (som != null){
-            som.start();
+        if (hurtClip != null) {
+            hurtClip.setFramePosition(0);
+            hurtClip.start();
         }
     }
 }

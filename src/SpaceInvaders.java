@@ -19,7 +19,9 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
     public int shipHeight = Constants.TILE_SIZE;
     public int shipX = Constants.TILE_SIZE * Constants.COLUMNS / 2 - Constants.TILE_SIZE;
     public int shipY = Constants.BOARD_HEIGHT - Constants.TILE_SIZE * 2;
-    public int shipVelocityX = Constants.TILE_SIZE;
+    public int shipVelocityX = Constants.TILE_SIZE / 6;
+    private boolean moveLeft = false;
+    private boolean moveRight = false;
 
     public ArrayList<Block> alienArray;
     public int alienWidth = Constants.TILE_SIZE * 2;
@@ -36,6 +38,8 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
     public int bulletWidth = Constants.TILE_SIZE / 8;
     public int bulletHeight = Constants.TILE_SIZE / 2;
     public int bulletVelocityY = -10;
+    private long lastFireTime = 0;
+    private boolean spacePressed = false;
 
     SpaceInvaders() {
         setPreferredSize(new Dimension(Constants.BOARD_WIDTH, Constants.BOARD_HEIGHT));
@@ -178,9 +182,26 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
                 a.y + a.height > b.y;   //a's bottom left corner passes b's top left corner
     }
 
+    private void fireBullet() {
+        long currentTime = System.currentTimeMillis();
+        if (spacePressed && currentTime - lastFireTime >= Constants.FIRE_INTERVAL) {
+            lastFireTime = currentTime;
+            Block bullet = new Block(ship.x + shipWidth * 16 / 32, ship.y, bulletWidth, bulletHeight, null);
+            bulletArray.add(bullet);
+            sounds.shoot();
+        }
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         move();
+        fireBullet();
+        if (moveLeft && ship.x - shipVelocityX >= 0) {
+            ship.x -= shipVelocityX;
+        }
+        if (moveRight && ship.x + shipWidth + shipVelocityX <= Constants.BOARD_WIDTH) {
+            ship.x += shipVelocityX;
+        }
         repaint();
         if (Constants.GAME_OVER) {
             Constants.GAME_LOOP.stop();
@@ -193,6 +214,15 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
 
     @Override
     public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+            moveLeft = true;
+        }
+        if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+            moveRight = true;
+        }
+        if (e.getKeyCode() == KeyEvent.VK_SPACE) {
+            spacePressed = true;
+        }
     }
 
     @Override
@@ -209,14 +239,24 @@ public class SpaceInvaders extends JPanel implements ActionListener, KeyListener
             createAliens();
             Constants.GAME_LOOP.start();
         }
-        if (e.getKeyCode() == KeyEvent.VK_LEFT && ship.x - shipVelocityX >= 0) ship.x -= shipVelocityX;
-        if (e.getKeyCode() == KeyEvent.VK_RIGHT && ship.x + ship.width + shipVelocityX <= Constants.BOARD_WIDTH) {
-            ship.x += shipVelocityX;
+//        if (e.getKeyCode() == KeyEvent.VK_LEFT && ship.x - shipVelocityX >= 0) ship.x -= shipVelocityX;
+//        if (e.getKeyCode() == KeyEvent.VK_RIGHT && ship.x + ship.width + shipVelocityX <= Constants.BOARD_WIDTH) {
+//            ship.x += shipVelocityX;
+//        }
+        if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+            moveLeft = false;
         }
+        if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+            moveRight = false;
+        }
+//        if (e.getKeyCode() == KeyEvent.VK_SPACE) {
+//            Block bullet = new Block(ship.x + shipWidth * 16 / 32, ship.y, bulletWidth, bulletHeight, null);
+//            bulletArray.add(bullet);
+//            sounds.shoot();
+//        }
         if (e.getKeyCode() == KeyEvent.VK_SPACE) {
-            Block bullet = new Block(ship.x + shipWidth * 16 / 32, ship.y, bulletWidth, bulletHeight, null);
-            bulletArray.add(bullet);
-            sounds.shoot();
+            spacePressed = false;
+            lastFireTime = 0;
         }
     }
 }
