@@ -24,7 +24,7 @@ Space Invaders é um jogo de tiro espacial clássico onde você deve defender a 
 
 ## Recursos
 - Gráficos coloridos e animações suaves
-- Sons e efeitos sonoros imersivos (Em implementação)
+- Sons e efeitos sonoros 
 - Níveis desafiadores com diferentes tipos de inimigos (A implementar)
 - Sistema de pontuação e classificação (A implementar)
 
